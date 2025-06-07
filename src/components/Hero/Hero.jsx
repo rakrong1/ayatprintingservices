@@ -22,9 +22,9 @@ const Hero = () => {
               <span className="title-line">Solutions</span>
             </h1>
             <p className="hero-description">
-              Transform your ideas into stunning printed materials with AYAT Business Services. 
-              We deliver exceptional quality, innovative designs, and professional results that 
-              make your business stand out.
+              Printing of lesson notes,end of term
+              examination, mock exams and other
+              printing services.
             </p>
             <div className="hero-buttons">
               <button className="btn btn-primary">

@@ -4,16 +4,16 @@ import './Services.css'
 const Services = () => {
   const services = [
     {
+      icon: '📄',
+      title: 'Document Services',
+      description: 'Professional document printing, binding, and finishing services for lesson notes, terminal and mock exams, reports, manuals, and presentations.',
+      features: ['Binding Options', 'Professional Finish', 'Bulk Orders']
+    },
+    {
       icon: '🖨️',
       title: 'Digital Printing',
       description: 'High-quality digital printing for all your business needs including brochures, flyers, and marketing materials.',
       features: ['High Resolution', 'Fast Turnaround', 'Color Accuracy']
-    },
-    {
-      icon: '📄',
-      title: 'Document Services',
-      description: 'Professional document printing, binding, and finishing services for reports, manuals, and presentations.',
-      features: ['Binding Options', 'Professional Finish', 'Bulk Orders']
     },
     {
       icon: '🏷️',
