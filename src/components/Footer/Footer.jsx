@@ -110,15 +110,15 @@ const Footer = () => {
             <div className="contact-item">
               <span className="contact-icon">📞</span>
               <div>
-                <p>+1 (555) 123-4567</p>
-                <p>+1 (555) 987-6543</p>
+                <p>+233 24 592 7491</p>
+              
               </div>
             </div>
             <div className="contact-item">
               <span className="contact-icon">✉️</span>
               <div>
-                <p>info@ayatbusiness.com</p>
-                <p>orders@ayatbusiness.com</p>
+                <p><p>ayatmultimedia19@gmail.com</p></p>
+              
               </div>
             </div>
           </div>

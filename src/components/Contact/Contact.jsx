@@ -40,17 +40,17 @@ const Contact = () => {
     {
       icon: '📞',
       title: 'Phone',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543']
+      details: ['+233 24 592 7491']
     },
     {
       icon: '✉️',
       title: 'Email',
-      details: ['info@ayatbusiness.com', 'orders@ayatbusiness.com']
+      details: ['ayatmultimedia19@gmail.com']
     },
     {
       icon: '🕒',
-      title: 'Hours',
-      details: ['Mon - Fri: 9:00 AM - 6:00 PM', 'Sat: 10:00 AM - 4:00 PM']
+      title: 'Working Hours',
+      details: ['Mon - Fri: 7:00 AM - 6:00 PM', 'Sat: 8:00 AM - 4:00 PM']
     }
   ]
 
