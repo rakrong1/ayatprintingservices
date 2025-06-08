@@ -25,7 +25,7 @@ const Services = () => {
           'Training manuals and handbooks',
           'Thesis and dissertation printing'
         ],
-        pricing: 'Starting from ₵0.20 per page for black & white, ₵0.50 for color printing'
+        pricing: 'Contact for pricing'
       }
     },
     {
@@ -94,7 +94,7 @@ const Services = () => {
           'Wall murals and decorative prints',
           'Vehicle wraps and decals'
         ],
-        pricing: 'Priced per square foot, starting from ₵15 per sq ft'
+        pricing: 'Custom quotes based on size, quantity, and material'
       }
     },
     {
@@ -117,7 +117,7 @@ const Services = () => {
           'Contact information sharing',
           'Corporate identity building'
         ],
-        pricing: '500 cards starting from ₵80, 1000 cards from ₵120'
+        pricing: 'Custom quotes based on quantity, materials, and finishing options'
       }
     },
     {
@@ -140,7 +140,7 @@ const Services = () => {
           'Website graphics and banners',
           'Social media graphics'
         ],
-        pricing: 'Logo design from ₵200, full brand packages from ₵800'
+        pricing: 'Custom quotes based on project complexity and timeline'
       }
     }
   ]
@@ -153,6 +153,23 @@ const Services = () => {
   const closeModal = () => {
     setSelectedService(null)
     document.body.style.overflow = 'unset' // Restore scrolling
+  }
+
+  // NEW FUNCTION: Handle Get Quote button
+  const handleGetQuote = () => {
+    // Close the modal first
+    closeModal()
+    
+    // Wait a bit for modal to close, then scroll to contact
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact')
+      if (contactSection) {
+        contactSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }, 300) // 300ms delay to allow modal close animation
   }
 
   // Close modal on Escape key
@@ -250,7 +267,7 @@ const Services = () => {
             </div>
 
             <div className="modal-footer">
-              <button className="contact-btn" onClick={closeModal}>
+              <button className="contact-btn" onClick={handleGetQuote}>
                 Get Quote
                 <span className="btn-arrow">→</span>
               </button>

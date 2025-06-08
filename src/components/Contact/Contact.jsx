@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 const Contact = () => {
@@ -9,6 +10,16 @@ const Contact = () => {
     service: '',
     message: ''
   })
+  
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
+
+  // EmailJS configuration - Replace with your actual values
+  const EMAILJS_CONFIG = {
+    SERVICE_ID: 'service_sr7lf1h', // Replace with your EmailJS service ID
+    TEMPLATE_ID: 'template_dza98wt', // Replace with your EmailJS template ID
+    PUBLIC_KEY: 'yoqzQT3Yk0bgFrGy1h' // Replace with your EmailJS public key
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -17,18 +28,50 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    })
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+          to_email: 'ayatmultimedia19@gmail.com' // Your business email
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      )
+
+      console.log('Email sent successfully:', result)
+      setSubmitStatus('success')
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      })
+
+    } catch (error) {
+      console.error('Email sending failed:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+      
+      // Clear status message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null)
+      }, 5000)
+    }
   }
 
   const contactInfo = [
@@ -86,6 +129,19 @@ const Contact = () => {
             <form className="contact-form glass" onSubmit={handleSubmit}>
               <h3 className="form-title">Send us a Message</h3>
               
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="status-message success">
+                  ✅ Message sent successfully! We'll get back to you soon.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="status-message error">
+                  ❌ Failed to send message. Please try again or contact us directly.
+                </div>
+              )}
+
               <div className="form-row">
                 <div className="form-group">
                   <input
@@ -95,6 +151,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div className="form-group">
@@ -105,6 +162,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -117,6 +175,7 @@ const Contact = () => {
                     placeholder="Your Phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div className="form-group">
@@ -125,6 +184,7 @@ const Contact = () => {
                     value={formData.service}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                   >
                     <option value="">Select Service</option>
                     <option value="digital-printing">Digital Printing</option>
@@ -145,12 +205,26 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn">
-                Send Message
-                <span className="btn-arrow">→</span>
+              <button 
+                type="submit" 
+                className="submit-btn"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="loading-spinner"></span>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <span className="btn-arrow">→</span>
+                  </>
+                )}
               </button>
             </form>
           </div>

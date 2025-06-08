@@ -4,6 +4,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  background-image: url('/images/ayat-hero.png');
   padding-top: 80px; /* Add padding to account for fixed header */
 }
 
@@ -13,7 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 .floating-shapes {
@@ -94,7 +95,7 @@
 }
 
 .title-line {
-  color: white;
+  color: rgb(0, 0, 0);
   opacity: 0;
   transform: translateY(50px);
   animation: slideUp 0.8s ease forwards;
@@ -128,7 +129,7 @@
 
 .hero-description {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   line-height: 1.6;
   margin-bottom: 3rem;
   opacity: 0;
@@ -164,7 +165,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #558e8ac5 0%, #1d6d76e0 100%);
   color: white;
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
@@ -175,7 +176,7 @@
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #558e8ac5 0%, #1d6d76e0 100%);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
@@ -227,12 +228,12 @@
 .stat-item h3 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: white;
+  color: rgb(0, 0, 0);
   margin-bottom: 0.5rem;
 }
 
 .stat-item p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-weight: 500;
 }
 
@@ -246,6 +247,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
+    
   }
 
   .hero-title {
