@@ -12,13 +12,14 @@ const Contact = () => {
   })
   
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
+  const [submitStatus, setSubmitStatus] = useState(null)
+  const [errorDetails, setErrorDetails] = useState('')
 
-  // EmailJS configuration - Replace with your actual values
+  // EmailJS configuration
   const EMAILJS_CONFIG = {
-    SERVICE_ID: 'service_sr7lf1h', // Replace with your EmailJS service ID
-    TEMPLATE_ID: 'template_6to7r86', // Replace with your EmailJS template ID
-    PUBLIC_KEY: 'yoqzQT3Yk0bgFrGy1h' // Replace with your EmailJS public key
+    SERVICE_ID: 'service_sr7lf1h',
+    TEMPLATE_ID: 'template_6to7r86', 
+    PUBLIC_KEY: 'deh4hgFhztL2HAI5I'
   }
 
   const handleChange = (e) => {
@@ -32,8 +33,21 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus(null)
+    setErrorDetails('')
+
+    // Debug: Log the data being sent
+    console.log('Sending email with data:', {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message
+    })
 
     try {
+      // Initialize EmailJS (add this line)
+      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY)
+
       // Send email using EmailJS
       const result = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
@@ -44,9 +58,8 @@ const Contact = () => {
           phone: formData.phone,
           service: formData.service,
           message: formData.message,
-          to_email: 'ayatmultimedia19@gmail.com' // Your business email
-        },
-        EMAILJS_CONFIG.PUBLIC_KEY
+          // Remove to_email - this should be set in your EmailJS template
+        }
       )
 
       console.log('Email sent successfully:', result)
@@ -62,15 +75,26 @@ const Contact = () => {
       })
 
     } catch (error) {
-      console.error('Email sending failed:', error)
+      console.error('Detailed error:', error)
       setSubmitStatus('error')
+      
+      // Set detailed error message
+      if (error.text) {
+        setErrorDetails(`Error: ${error.text}`)
+      } else if (error.message) {
+        setErrorDetails(`Error: ${error.message}`)
+      } else {
+        setErrorDetails('Unknown error occurred')
+      }
+      
     } finally {
       setIsSubmitting(false)
       
-      // Clear status message after 5 seconds
+      // Clear status message after 8 seconds (longer for debugging)
       setTimeout(() => {
         setSubmitStatus(null)
-      }, 5000)
+        setErrorDetails('')
+      }, 8000)
     }
   }
 
@@ -139,6 +163,7 @@ const Contact = () => {
               {submitStatus === 'error' && (
                 <div className="status-message error">
                   ❌ Failed to send message. Please try again or contact us directly.
+                  {errorDetails && <div style={{fontSize: '0.9em', marginTop: '0.5rem'}}>{errorDetails}</div>}
                 </div>
               )}
 
