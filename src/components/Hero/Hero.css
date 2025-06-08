@@ -5,7 +5,28 @@
   position: relative;
   overflow: hidden;
   background-image: url('/images/ayat-hero.png');
-  padding-top: 80px; /* Add padding to account for fixed header */
+  background-size: cover;
+  
+  background-repeat: no-repeat;
+  padding-top: 80px;
+}
+
+/* Add a soft overlay to make content more readable and soft */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  backdrop-filter: blur(1px);
+  z-index: 1;
 }
 
 .hero-background {
@@ -21,13 +42,16 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 
 .shape {
   position: absolute;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .shape-1 {
@@ -76,6 +100,8 @@
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-content {
@@ -99,6 +125,7 @@
   opacity: 0;
   transform: translateY(50px);
   animation: slideUp 0.8s ease forwards;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .title-line:nth-child(1) {
@@ -118,6 +145,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 @keyframes slideUp {
@@ -134,6 +162,7 @@
   margin-bottom: 3rem;
   opacity: 0;
   animation: fadeIn 0.8s ease 0.8s forwards;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes fadeIn {
@@ -157,42 +186,96 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced glassmorphism effect for buttons */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #558e8ac5 0%, #1d6d76e0 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(85, 142, 138, 0.9) 0%,
+    rgba(29, 109, 118, 0.9) 100%
+  );
   color: white;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  box-shadow: 
+    0 10px 30px rgba(85, 142, 138, 0.3),
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+  box-shadow: 
+    0 15px 40px rgba(85, 142, 138, 0.4),
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(85, 142, 138, 1) 0%,
+    rgba(29, 109, 118, 1) 100%
+  );
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #558e8ac5 0%, #1d6d76e0 100%);
-  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  color: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn-arrow {
   transition: transform 0.3s ease;
 }
 
-.btn-primary:hover .btn-arrow {
+.btn:hover .btn-arrow {
   transform: translateX(5px);
 }
 
@@ -218,11 +301,31 @@
 .stat-item {
   padding: 2rem;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .stat-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .stat-item h3 {
@@ -230,24 +333,25 @@
   font-weight: 800;
   color: rgb(0, 0, 0);
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 .stat-item p {
   color: rgba(0, 0, 0, 0.8);
   font-weight: 500;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px; /* Increase padding for mobile to account for larger header */
-    min-height: calc(100vh - 20px); /* Slightly reduce height to prevent overflow */
+    padding-top: 100px;
+    min-height: calc(100vh - 20px);
   }
 
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
-    
   }
 
   .hero-title {
@@ -281,7 +385,7 @@
 
 @media (max-width: 600px) {
   .hero {
-    padding-top: 120px; /* Even more padding for very small screens */
+    padding-top: 120px;
   }
 
   .hero-title {
@@ -300,7 +404,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: 140px; /* Maximum padding for smallest screens */
+    padding-top: 140px;
   }
 
   .hero-container {
@@ -319,4 +423,9 @@
   .stat-item h3 {
     font-size: 1.5rem;
   }
+}
+
+.btn.clicked {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
 }
