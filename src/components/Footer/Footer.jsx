@@ -7,9 +7,59 @@ const Footer = () => {
   const [showModal, setShowModal] = useState(false);
 
   const legalTexts = {
-    'Privacy Policy': `This is our Privacy Policy. We are committed to protecting your personal information and your right to privacy.`,
-    'Terms of Service': `These are our Terms of Service. By using our services, you agree to be bound by these terms.`,
-    'Cookie Policy': `Our Cookie Policy explains how we use cookies to improve your browsing experience.`
+    'Privacy Policy': `
+At AYAT Business Services, we are committed to safeguarding your privacy. This Privacy Policy outlines how we collect, use, disclose, and protect your information when you interact with our services.
+
+1. **Information We Collect**: We may collect personal information such as your name, email address, phone number, and company details when you contact us or use our services.
+
+2. **How We Use Your Information**: Your data is used to deliver services, respond to inquiries, process transactions, and improve our website and customer experience.
+
+3. **Data Sharing**: We do not sell or rent your personal information. We may share it with trusted partners who help us operate our business, as long as they agree to keep it confidential.
+
+4. **Cookies and Tracking**: We use cookies to understand user behavior, improve our website performance, and deliver relevant advertisements.
+
+5. **Your Rights**: You have the right to access, correct, or request deletion of your personal data. To exercise your rights, please contact us.
+
+6. **Security**: We implement appropriate measures to protect your personal data against unauthorized access or disclosure.
+
+By using our services, you agree to the terms outlined in this Privacy Policy.
+`,
+
+    'Terms of Service': `
+Welcome to AYAT Business Services. By accessing or using our website and services, you agree to comply with the following Terms of Service:
+
+1. **Use of Services**: Our services are provided for lawful purposes only. You agree not to misuse them or violate any applicable laws or regulations.
+
+2. **Intellectual Property**: All content, including logos, designs, and graphics, are the property of AYAT Business Services and may not be reproduced without our written consent.
+
+3. **Orders and Payments**: By placing an order, you agree to provide accurate information and pay the full amount for the services selected.
+
+4. **Cancellation and Refunds**: You may cancel your order within a specified period. Refunds are issued at our discretion, based on the service and project status.
+
+5. **Limitation of Liability**: We strive to provide quality service, but we are not liable for any indirect, incidental, or consequential damages that may arise from using our website or services.
+
+6. **Changes to Terms**: We reserve the right to modify these terms at any time. Continued use of our services implies acceptance of the revised terms.
+
+If you do not agree to these terms, please do not use our services.
+`
+,
+    'Cookie Policy': `
+Our Cookie Policy explains how AYAT Business Services uses cookies and similar technologies to enhance your experience on our website.
+
+1. **What Are Cookies**: Cookies are small text files stored on your device when you visit a website. They help us remember your preferences and optimize website functionality.
+
+2. **Types of Cookies We Use**:
+- **Essential Cookies**: Enable basic functions like navigation and access to secure areas.
+- **Performance Cookies**: Help us analyze how visitors use our site.
+- **Marketing Cookies**: Used to deliver relevant ads and track campaign performance.
+
+3. **Managing Cookies**: You can control or delete cookies through your browser settings. Disabling cookies may affect site functionality.
+
+4. **Third-Party Cookies**: We may use third-party services like Google Analytics to understand website traffic and improve performance.
+
+By continuing to use our site, you consent to the use of cookies in accordance with this policy.
+`
+
   };
 
   const openModal = (title) => {

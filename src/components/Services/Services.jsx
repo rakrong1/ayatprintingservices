@@ -32,7 +32,7 @@ const Services = () => {
       icon: '📘',
       title: 'General Stationery',
       description: 'Wide range of stationery supplies including soft copies of lesson notes, Textbooks, examinations, and other educational resources online.',
-      features: ['Waterproof Options', 'Custom Shapes', 'Durable Materials'],
+      features: ['Lesson Notes', 'Textbooks', 'Mock Exams', 'End of Term Exams', 'Past Questions'],
       details: {
         overview: 'Professional label printing services for product branding, packaging, and organizational needs with various materials and adhesive options.',
         specifications: [
