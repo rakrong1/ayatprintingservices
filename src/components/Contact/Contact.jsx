@@ -102,12 +102,12 @@ const Contact = () => {
     {
       icon: '📍',
       title: 'Address',
-      details: ['123 Business Street', 'City, State 12345']
+      details: ['Techimantia', 'Ahafo Region', 'Ghana']
     },
     {
       icon: '📞',
       title: 'Phone',
-      details: ['+233 24 592 7491']
+      details: ['+233 24 592 7491', '+233 20 786 0773']
     },
     {
       icon: '✉️',
@@ -214,7 +214,7 @@ const Contact = () => {
                     <option value="">Select Service</option>
                     <option value="digital-printing">Digital Printing</option>
                     <option value="document-services">Document Services</option>
-                    <option value="custom-labels">Custom Labels</option>
+                    <option value="custom-labels">General Stationary</option>
                     <option value="large-format">Large Format</option>
                     <option value="business-cards">Business Cards</option>
                     <option value="design-services">Design Services</option>
