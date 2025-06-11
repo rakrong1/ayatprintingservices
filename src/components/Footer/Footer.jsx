@@ -127,11 +127,12 @@ const Footer = () => {
               </div>
             </div>
             <div className="contact-item">
-              <span className="contact-icon">✉️</span>
-              <div>
-                <p>ayatmultimedia19@gmail.com</p>
+            <span className="contact-icon">✉️</span>
+             <div>
+             <p>ayatmultimedia19@gmail.com</p>
               </div>
-            </div>
+              </div>
+
           </div>
         </div>
 
