@@ -34,7 +34,7 @@ const Services = () => {
       description: 'Wide range of stationery supplies including soft copies of lesson notes, Textbooks, examinations, and other educational resources online.',
       features: ['Lesson Notes', 'Textbooks', 'Mock Exams', 'End of Term Exams', 'Past Questions'],
       details: {
-        overview: 'Professional label printing services for product branding, packaging, and organizational needs with various materials and adhesive options.',
+        overview: 'Wide range of stationery supplies including soft copies of lesson notes, textbooks, examinations, past questions, customized stationery, and other educational resources.',
         specifications: [
           'Materials: Vinyl, paper, polyester, clear labels',
           'Adhesives: Permanent, removable, repositionable',
@@ -42,10 +42,11 @@ const Services = () => {
           'Shapes: Round, square, oval, custom die-cut shapes'
         ],
         useCases: [
-          'Product labeling and branding',
-          'Packaging and shipping labels',
-          'Asset and inventory tags',
-          'Warning and safety labels',
+          'Tutoring and lesson planning',
+          'Educational institutions and schools',
+          'Corporate training materials',
+          'Mock exams and assessments',
+          'End of term examinations and past questions',
           'Promotional stickers'
         ],
         pricing: 'Custom quotes based on size, quantity, and material'
