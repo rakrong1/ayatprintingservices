@@ -76,7 +76,7 @@ By continuing to use our site, you consent to the use of cookies in accordance w
     services: [
       'Digital Printing',
       'Document Services',
-      'Custom Labels',
+      'General Stationery',
       'Large Format',
       'Business Cards',
       'Design Services'
