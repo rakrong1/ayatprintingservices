@@ -81,13 +81,13 @@ const Hero = () => {
           <div className="hero-text">
             <h1 className="hero-title">
               <span className="title-line">Premium</span>
-              <span className="title-line highlight">Printing</span>
+              <span className="title-line highlight">Printing & Stationery</span>
               <span className="title-line">Solutions</span>
             </h1>
             <p className="hero-description">
-              Printing of lesson notes,end of term
-              examination, mock exams and other
-              printing services.
+              We provide top-quality printing services for lesson notes, end-of-term examinations, mock exams, and more. Beyond printing, we supply a wide range of stationery, textbooks, and educational materials.
+
+              We also offer soft copies of lesson notes, exams, and other valuable academic resources online.
             </p>
             <div className="hero-buttons">
               <button 
