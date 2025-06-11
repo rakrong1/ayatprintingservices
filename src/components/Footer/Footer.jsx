@@ -116,14 +116,15 @@ const Footer = () => {
             <div className="contact-item">
               <span className="contact-icon">📍</span>
               <div>
-                <p>123 Business Street</p>
-                <p>City, State 12345</p>
+                <p>Techimantia, Ahafo Region.</p>
+                <p>Ghana</p>
               </div>
             </div>
             <div className="contact-item">
               <span className="contact-icon">📞</span>
               <div>
                 <p>+233 24 592 7491</p>
+                <p>+233 20 786 0773</p>
               </div>
             </div>
             <div className="contact-item">
