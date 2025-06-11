@@ -29,6 +29,29 @@ const Services = () => {
       }
     },
     {
+      icon: '📘',
+      title: 'General Stationery',
+      description: 'Wide range of stationery supplies including soft copies of lesson notes, Textbooks, examinations, and other educational resources online.',
+      features: ['Waterproof Options', 'Custom Shapes', 'Durable Materials'],
+      details: {
+        overview: 'Professional label printing services for product branding, packaging, and organizational needs with various materials and adhesive options.',
+        specifications: [
+          'Materials: Vinyl, paper, polyester, clear labels',
+          'Adhesives: Permanent, removable, repositionable',
+          'Finishes: Matte, gloss, textured',
+          'Shapes: Round, square, oval, custom die-cut shapes'
+        ],
+        useCases: [
+          'Product labeling and branding',
+          'Packaging and shipping labels',
+          'Asset and inventory tags',
+          'Warning and safety labels',
+          'Promotional stickers'
+        ],
+        pricing: 'Custom quotes based on size, quantity, and material'
+      }
+    },
+    {
       icon: '🖨️',
       title: 'Digital Printing',
       description: 'High-quality digital printing for all your business needs including brochures, flyers, and marketing materials.',
@@ -49,29 +72,6 @@ const Services = () => {
           'Promotional materials'
         ],
         pricing: 'Competitive rates with bulk discounts available'
-      }
-    },
-    {
-      icon: '🏷️',
-      title: 'Custom Labels',
-      description: 'Custom label printing for products, packaging, and branding with various materials and finishes.',
-      features: ['Waterproof Options', 'Custom Shapes', 'Durable Materials'],
-      details: {
-        overview: 'Professional label printing services for product branding, packaging, and organizational needs with various materials and adhesive options.',
-        specifications: [
-          'Materials: Vinyl, paper, polyester, clear labels',
-          'Adhesives: Permanent, removable, repositionable',
-          'Finishes: Matte, gloss, textured',
-          'Shapes: Round, square, oval, custom die-cut shapes'
-        ],
-        useCases: [
-          'Product labeling and branding',
-          'Packaging and shipping labels',
-          'Asset and inventory tags',
-          'Warning and safety labels',
-          'Promotional stickers'
-        ],
-        pricing: 'Custom quotes based on size, quantity, and material'
       }
     },
     {
